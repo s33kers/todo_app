@@ -6,13 +6,11 @@ package us.martink.todoserver;
 
 import javax.annotation.Generated;
 
-import us.martink.todoserver.tables.Databasechangelog;
-import us.martink.todoserver.tables.Databasechangeloglock;
 import us.martink.todoserver.tables.TodoItem;
 
 
 /**
- * Convenience access to all tables in public
+ * Convenience access to all tables in PUBLIC
  */
 @Generated(
     value = {
@@ -25,17 +23,7 @@ import us.martink.todoserver.tables.TodoItem;
 public class Tables {
 
     /**
-     * The table <code>public.databasechangelog</code>.
-     */
-    public static final Databasechangelog DATABASECHANGELOG = us.martink.todoserver.tables.Databasechangelog.DATABASECHANGELOG;
-
-    /**
-     * The table <code>public.databasechangeloglock</code>.
-     */
-    public static final Databasechangeloglock DATABASECHANGELOGLOCK = us.martink.todoserver.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
-
-    /**
-     * The table <code>public.todo_item</code>.
+     * The table <code>PUBLIC.TODO_ITEM</code>.
      */
     public static final TodoItem TODO_ITEM = us.martink.todoserver.tables.TodoItem.TODO_ITEM;
 }

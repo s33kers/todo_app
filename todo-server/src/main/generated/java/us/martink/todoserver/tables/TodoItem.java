@@ -5,23 +5,17 @@ package us.martink.todoserver.tables;
 
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.annotation.Generated;
 
 import org.jooq.Field;
-import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
-import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
 import org.jooq.impl.TableImpl;
 
-import us.martink.todoserver.Indexes;
-import us.martink.todoserver.Keys;
 import us.martink.todoserver.Public;
 import us.martink.todoserver.tables.records.TodoItemRecord;
 
@@ -39,10 +33,10 @@ import us.martink.todoserver.tables.records.TodoItemRecord;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class TodoItem extends TableImpl<TodoItemRecord> {
 
-    private static final long serialVersionUID = -174992081;
+    private static final long serialVersionUID = -1117790710;
 
     /**
-     * The reference instance of <code>public.todo_item</code>
+     * The reference instance of <code>PUBLIC.TODO_ITEM</code>
      */
     public static final TodoItem TODO_ITEM = new TodoItem();
 
@@ -55,41 +49,41 @@ public class TodoItem extends TableImpl<TodoItemRecord> {
     }
 
     /**
-     * The column <code>public.todo_item.id</code>.
+     * The column <code>PUBLIC.TODO_ITEM.ID</code>.
      */
-    public final TableField<TodoItemRecord, Long> ID = createField("id", org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
+    public final TableField<TodoItemRecord, Long> ID = createField("ID", org.jooq.impl.SQLDataType.BIGINT.nullable(false), this, "");
 
     /**
-     * The column <code>public.todo_item.created</code>.
+     * The column <code>PUBLIC.TODO_ITEM.CREATED</code>.
      */
-    public final TableField<TodoItemRecord, LocalDateTime> CREATED = createField("created", org.jooq.impl.SQLDataType.LOCALDATETIME, this, "");
+    public final TableField<TodoItemRecord, LocalDateTime> CREATED = createField("CREATED", org.jooq.impl.SQLDataType.LOCALDATETIME, this, "");
 
     /**
-     * The column <code>public.todo_item.content</code>.
+     * The column <code>PUBLIC.TODO_ITEM.CONTENT</code>.
      */
-    public final TableField<TodoItemRecord, String> CONTENT = createField("content", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
+    public final TableField<TodoItemRecord, String> CONTENT = createField("CONTENT", org.jooq.impl.SQLDataType.VARCHAR(255), this, "");
 
     /**
-     * The column <code>public.todo_item.archived</code>.
+     * The column <code>PUBLIC.TODO_ITEM.ARCHIVED</code>.
      */
-    public final TableField<TodoItemRecord, Boolean> ARCHIVED = createField("archived", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaultValue(org.jooq.impl.DSL.field("false", org.jooq.impl.SQLDataType.BOOLEAN)), this, "");
+    public final TableField<TodoItemRecord, Boolean> ARCHIVED = createField("ARCHIVED", org.jooq.impl.SQLDataType.BOOLEAN.nullable(false).defaultValue(org.jooq.impl.DSL.field("FALSE", org.jooq.impl.SQLDataType.BOOLEAN)), this, "");
 
     /**
-     * Create a <code>public.todo_item</code> table reference
+     * Create a <code>PUBLIC.TODO_ITEM</code> table reference
      */
     public TodoItem() {
-        this(DSL.name("todo_item"), null);
+        this(DSL.name("TODO_ITEM"), null);
     }
 
     /**
-     * Create an aliased <code>public.todo_item</code> table reference
+     * Create an aliased <code>PUBLIC.TODO_ITEM</code> table reference
      */
     public TodoItem(String alias) {
         this(DSL.name(alias), TODO_ITEM);
     }
 
     /**
-     * Create an aliased <code>public.todo_item</code> table reference
+     * Create an aliased <code>PUBLIC.TODO_ITEM</code> table reference
      */
     public TodoItem(Name alias) {
         this(alias, TODO_ITEM);
@@ -109,30 +103,6 @@ public class TodoItem extends TableImpl<TodoItemRecord> {
     @Override
     public Schema getSchema() {
         return Public.PUBLIC;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<Index> getIndexes() {
-        return Arrays.<Index>asList(Indexes.PK_TODO);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public UniqueKey<TodoItemRecord> getPrimaryKey() {
-        return Keys.PK_TODO;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<UniqueKey<TodoItemRecord>> getKeys() {
-        return Arrays.<UniqueKey<TodoItemRecord>>asList(Keys.PK_TODO);
     }
 
     /**

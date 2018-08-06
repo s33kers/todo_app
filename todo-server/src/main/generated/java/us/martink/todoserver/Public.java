@@ -15,8 +15,6 @@ import org.jooq.Sequence;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
 
-import us.martink.todoserver.tables.Databasechangelog;
-import us.martink.todoserver.tables.Databasechangeloglock;
 import us.martink.todoserver.tables.TodoItem;
 
 
@@ -33,25 +31,15 @@ import us.martink.todoserver.tables.TodoItem;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -736073415;
+    private static final long serialVersionUID = 539936739;
 
     /**
-     * The reference instance of <code>public</code>
+     * The reference instance of <code>PUBLIC</code>
      */
     public static final Public PUBLIC = new Public();
 
     /**
-     * The table <code>public.databasechangelog</code>.
-     */
-    public final Databasechangelog DATABASECHANGELOG = us.martink.todoserver.tables.Databasechangelog.DATABASECHANGELOG;
-
-    /**
-     * The table <code>public.databasechangeloglock</code>.
-     */
-    public final Databasechangeloglock DATABASECHANGELOGLOCK = us.martink.todoserver.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
-
-    /**
-     * The table <code>public.todo_item</code>.
+     * The table <code>PUBLIC.TODO_ITEM</code>.
      */
     public final TodoItem TODO_ITEM = us.martink.todoserver.tables.TodoItem.TODO_ITEM;
 
@@ -59,7 +47,7 @@ public class Public extends SchemaImpl {
      * No further instances allowed
      */
     private Public() {
-        super("public", null);
+        super("PUBLIC", null);
     }
 
 
@@ -92,8 +80,6 @@ public class Public extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            Databasechangelog.DATABASECHANGELOG,
-            Databasechangeloglock.DATABASECHANGELOGLOCK,
             TodoItem.TODO_ITEM);
     }
 }

@@ -1,0 +1,31 @@
+version: '3'
+services:
+  web:
+    container_name: todo-server
+    image: todo-server
+    ports:
+    - 8080:8080
+    depends_on:
+    - db
+  db:
+    container_name: postgre_db
+    image: postgres:9.5
+    restart: always
+    volumes:
+    - sample_db:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=qwerty
+    - POSTGRES_USER=todo
+    - POSTGRES_DB=todo
+    - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+    - 5432:5432
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+    - 8081:8080
+
+volumes:
+  sample_db: {}

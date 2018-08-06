@@ -27,7 +27,7 @@ import org.jooq.impl.CatalogImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DefaultCatalog extends CatalogImpl {
 
-    private static final long serialVersionUID = 756026920;
+    private static final long serialVersionUID = -1109851608;
 
     /**
      * The reference instance of <code></code>
@@ -35,7 +35,7 @@ public class DefaultCatalog extends CatalogImpl {
     public static final DefaultCatalog DEFAULT_CATALOG = new DefaultCatalog();
 
     /**
-     * The schema <code>public</code>.
+     * The schema <code>PUBLIC</code>.
      */
     public final Public PUBLIC = us.martink.todoserver.Public.PUBLIC;
 
