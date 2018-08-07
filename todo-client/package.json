@@ -11,20 +11,12 @@
     "modules": "^0.4.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^1.1.4",
     "rest": "^2.0.0",
     "react-router-dom": "^4.3.1"
   },
-  "scripts": {
-    "start": "webpack-dev-server",
-    "dev": "webpack-dev-server --content-base=public",
-    "build": "webpack -p",
-    "watch": "webpack --watch -d",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
   "devDependencies": {
-    "@types/react-router-dom": "4.2.7",
+    "@types/react-router-dom": "^4.2.7",
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
     "babel-loader": "^7.1.5",
@@ -35,5 +27,10 @@
     "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
+  },
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server --content-base=public"
   }
 }
