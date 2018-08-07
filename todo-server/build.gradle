@@ -28,6 +28,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'docker'
 
 sourceCompatibility = 1.8
+version = '1.0.0'
 
 jar {
     group = 's33kers'
@@ -79,11 +80,14 @@ jooq {
 }
 
 task buildDocker(type: Docker, dependsOn: build) {
+    push = true
+    tag = 's33kers/todo-server'
     applicationName = jar.baseName
     dockerfile = file('Dockerfile')
     doFirst {
         copy {
             from jar
+            rename {'app.jar'}
             into stageDir
         }
     }

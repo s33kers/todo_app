@@ -3,18 +3,13 @@ package us.martink.todoserver;
 import org.jooq.SQLDialect;
 import org.jooq.conf.RenderNameStyle;
 import org.jooq.conf.Settings;
-import org.jooq.conf.StatementType;
-import org.jooq.impl.DefaultConfiguration;
 import org.jooq.impl.DefaultDSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 @SpringBootApplication
@@ -30,6 +25,7 @@ public class TodoApplication {
     @Bean
     public DefaultDSLContext dsl() {
         Settings settings = new Settings();
+        //reikia, nes liquibase sukuria viska lowercase, o jooq select'uose naudoja kabutes kas yra case sensitive
         settings.setRenderNameStyle(RenderNameStyle.AS_IS);
         //FIXME kreivai atrodo bet veikia
         try {
