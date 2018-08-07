@@ -6,5 +6,6 @@ docker-compose up
 
 To run todo-client (docker image will be available soon)
 ```
-yarn dev 
+npm install
+npm run dev
 ```
